@@ -321,6 +321,12 @@ input
       justify-content: center;
       align-items: center;
     }
+    .prod__item__imagen {
+      height: 100%;
+    }
+    .prod__item__nombre {
+      font-size: 0.9rem;
+    }
     .prod__agregar__producto
     {
         display: flex;
@@ -332,6 +338,7 @@ input
     .prod__mis__productos
     {
         width: 50%;
+        height: 60vh;   
     }
   }
     
