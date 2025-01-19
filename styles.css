@@ -1,0 +1,363 @@
+/* style.css */
+:root {
+    --color-de-fondo: #d4c6f3;
+    --color-ventanas: #9c9c9c;
+    --color-de-link: rgb(129, 129, 129);
+    --color-footer-header: #c82f00;}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    line-height: 1.6;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-de-link);
+}
+
+body {
+    font-family: 'Pixelify Sans', sans-serif;
+    margin: 0;
+    cursor: url(assets/raton.png), auto;
+    background-color: var(--color-de-fondo);
+    position: relative;
+
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  cursor
+  {
+
+  }
+  h2, input, button {
+    font-family: 'Pixelify Sans', sans-serif;
+  }
+  a
+  {
+    cursor : url(assets/mano.png), pointer;
+    color:white;
+  }
+  
+  
+
+  /*------ HEADER ------*/
+  .header{
+    display: flex;
+    background-color: var(--color-footer-header);
+    padding:  0;
+    margin: 0;
+    top:0;
+    justify-content:center;
+    text-align: center;
+    align-items: center;
+    position: sticky;
+    height: 5vh;
+  }
+  /*------ productos   ------*/
+    .productos{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: row;
+        justify-content:space-around;
+        margin: 0 auto;
+        padding: 0; 
+        flex:1;
+        
+    }
+    .prod__agregar__producto{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        margin: 5px;
+        padding: 0;
+        background-color: var(--color-ventanas);
+        border: 3px solid rgb(0, 0, 0);
+        order:1;
+    }
+
+.prod__agregar__titulo
+{
+    color: white;
+    background-color: blue;
+    text-align: center;
+    margin:0;
+    width:100%;
+    height: 5vh;
+}
+
+
+input,button
+{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 4px solid rgb(94, 94, 94);
+    background-color: white;
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+    
+
+}
+button
+{
+    cursor: url(assets/mano.png), pointer;    
+    background-color:   blue;
+    color: white;
+    border-color: white;
+    justify-content: center;
+    align-items: center;
+    width:40%
+
+}
+input
+{
+    min-width: 80%;
+    cursor: url(assets/texto.png), auto;
+}
+.agregar__producto__limpiar
+{
+    background-color: rgb(78, 78, 78);
+    color: white;
+    border-color: white;
+}
+.agregar__producto__enviar:hover
+{
+    background-color: white;
+    color: blue;
+    border-color: blue;
+}
+.agregar__producto__limpiar:hover
+{
+    background-color: white;
+    color: rgb(78, 78, 78);
+    border-color: rgb(78, 78, 78);
+}
+.error
+{
+    border-color: red;
+}       
+.agregar_formulario
+{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    justify-items: center;
+}
+/*------MIS PRODUCTOS ------*/
+.prod__mis__productos__titulo
+{
+    color: white;
+    background-color: blue;
+    text-align: center;
+    margin:0;
+    width:100%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+}
+.prod__mis__productos{
+    order:2;
+    margin:5px;
+    padding: 0;
+    background-color: var(--color-ventanas);
+    border: 3px solid rgb(0, 0, 0);
+    height: 60vh;
+    overflow-y: auto;
+
+}
+.prod__lista
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.prod__lista > li {
+    flex: 0 0 calc(33.333% - 1rem);
+    min-width: 100px;
+    max-width: 200px;
+    padding: 0; /* Remove padding here since we'll handle it in child elements */
+    background: white;
+    border-radius: 8px;
+}
+
+.prod__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura una separación uniforme */
+    align-items: center; /* Centra horizontalmente los elementos */
+    margin: 0;
+    padding: 10px;
+    background-color: var(--color-ventanas);
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    width: 40%; /* Reduce el ancho del elemento */
+    height: 50%; /* Reduce la altura del elemento */
+    overflow: hidden; /* Evita desbordamientos */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+}
+
+.prod__item__imagen {
+    width: 100%;
+    height: 50%; /* Reduce la altura de la imagen */
+    object-fit: cover;
+    border-radius: 7px 7px 0 0; /* Redondea solo las esquinas superiores */
+}
+
+.prod__item__nombre {
+    display: flex;
+    align-items: center; /* Centra verticalmente el texto */
+    justify-content: center; /* Centra horizontalmente el texto */
+    margin: 5px 0; /* Ajusta un margen vertical */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    text-align: center;
+    white-space: normal; /* Permite el salto de línea */
+    word-wrap: break-word; /* Divide palabras largas si es necesario */
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+}
+
+
+.prod__item__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centra verticalmente los elementos */
+    width: 100%; /* Asegura que ocupe el ancho completo */
+}
+
+
+
+.prod__item__precio {
+    margin: 0;
+}
+.prod__item__eliminar {
+    background-color: #ff4444;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: url(assets/mano.png), pointer;
+}
+
+
+/*------ FOOTER ------*/
+.footer
+{
+    
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-footer-header);
+    padding:  0;
+    margin: 0;
+    bottom:0;
+    left:0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;  
+    height: 15vh;
+    width: 100%;
+  
+    
+}
+.footer__texto
+{
+    margin:0;
+
+}
+/*----- Responsive -----*/ 
+@media screen and (min-width: 768px) {
+    .productos {
+      flex-direction: row;
+      justify-content: center;
+        align-items: center;
+    }
+    .prod__agregar__producto {
+      width: 100%;
+      height: 40vh;
+      order:2;
+    
+    }
+    .prod__mis__productos {
+      width: 100%;
+      height: 60vh;
+      order:1
+  
+  }
+    .prod__item {
+        width: 40%;
+        height: 30%;
+    }
+
+@media screen and (min-width: 1024px) {
+    .prod__item {
+      width: 20%;
+    }
+    .productos {
+      flex-direction: row;
+      margin: 0;
+      padding: 10vh;
+      gap:30vh;    
+      justify-content: center;
+      align-items: center;
+    }
+    .prod__agregar__producto
+    {
+        display: flex;
+        justify-content: space-around;
+        width: 30%;
+        height: 50vh;
+        
+    }
+    .prod__mis__productos
+    {
+        width: 50%;
+    }
+  }
+    
+}
+
+/*------ Shake efecto ------*/
+
+.prod__item__eliminar:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+  
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+    cursor: url(assets/mano.png), pointer;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }

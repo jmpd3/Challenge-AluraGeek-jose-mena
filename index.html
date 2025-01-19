@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="crt.css">
+    <script src="https://kit.fontawesome.com/adafe4f4e6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <title>Challenge AluraGeek</title>
+</head>
+<body class="crt">
+    <header class="header">
+    <img class="logo" src="assets/logo.png" alt="Logo AluraGeek">
+    </header>
+    <section class="productos">
+        <div class="prod__mis__productos">
+            <h2 class="prod__mis__productos__titulo">Mis productos</h2>
+            <ul class="prod__lista">
+
+            </ul>
+        </div>
+            <div class="prod__agregar__producto">
+                <h2 class="prod__agregar__titulo">Agregar producto</h2> 
+                <form class="agregar_formulario">
+                    <input class="agregar__producto__nombre"type="text" name="nombre" placeholder="Nombre...">
+                    <input class="agregar__producto__precio" step=".01" type="number" name="precio" placeholder="Precio...">
+                    <input class="agregar__producto__imagen" name="imagen" placeholder="Url de la imagen...">
+                    <button class="agregar__producto__enviar" onclick="agregarProducto(event)">Enviar</button>
+                    <button class="agregar__producto__limpiar" onclick="limpiarForm(event)">Limpiar</button>
+                </form>
+                <script>
+
+                </script>
+            </div>
+    </section>
+    <footer class="footer">
+        <img class="footer__logo" src="assets/logo.png" alt="Logo AluraGeek">
+        <p class="footer__texto">Desarrollado por <a href="" target="_blank">Jose Orlando Mena, 2025</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
