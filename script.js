@@ -1,5 +1,5 @@
 async function getProductos() {
-    const response = await fetch('http://localhost:8080/productos');
+    const response = await fetch('https://678ff78649875e5a1a93fd00.mockapi.io/productos');
     const productos = await response.json();
     const lista = document.querySelector('.prod__lista');
 
@@ -29,16 +29,11 @@ async function getProductos() {
 
 // Crear producto
 async function crearProducto(producto) {
-    const response = await fetch('http://localhost:8080/productos', {
+    const response = await fetch('https://678ff78649875e5a1a93fd00.mockapi.io/productos', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(producto)
     });
-    const responseactualizar = await fetch('http://localhost:8080/lastId', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: '{"id":'+(producto.id+1)+'}'
-    }); 
     if (response.ok) {
         alert('Producto creado exitosamente.');
         getProductos(); // Actualizar la lista
@@ -49,7 +44,7 @@ async function crearProducto(producto) {
 
 async function eliminarProducto(id) {
 
-    const response = await fetch(`http://localhost:8080/productos/${id}`, {
+    const response = await fetch(`https://678ff78649875e5a1a93fd00.mockapi.io/productos/${id}`, {
         method: 'DELETE'
     });
     if (response.ok) {
@@ -62,7 +57,7 @@ async function eliminarProducto(id) {
 
 // Actualizar producto
 async function actualizarProducto(id, productoActualizado) {
-    const response = await fetch(`http://localhost:8080/productos/${id}`, {
+    const response = await fetch(`https://678ff78649875e5a1a93fd00.mockapi.io/productos/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(productoActualizado)
@@ -76,12 +71,12 @@ async function actualizarProducto(id, productoActualizado) {
 }
 
 
-// Reducir nombre (ya implementado)
+
 function reducirNombre(nombre) {
     return nombre.length > 22 ? nombre.slice(0, 19) + '...' : nombre;
 }
 
-// Inicializar lista de productos
+
 getProductos();
 
 function limpiarForm(event)
@@ -107,7 +102,7 @@ function validarFormulario(event) {
     let conteo_error = 0;
     let mensaje_error = ''; 
 
-    // Validar nombre
+    
     if (nombre === '') {
         mensaje_error += 'El nombre del producto es obligatorio. \n';
         conteo_error++;
@@ -116,7 +111,7 @@ function validarFormulario(event) {
         document.querySelector('.agregar__producto__nombre').classList.remove('error');
     }
 
-    // Validar precio
+   
     if (precio === '' || isNaN(precio) || parseFloat(precio) < 0) {
         mensaje_error += 'El precio del producto es obligatorio y debe ser un número positivo. \n';
         conteo_error++;
@@ -125,7 +120,7 @@ function validarFormulario(event) {
         document.querySelector('.agregar__producto__precio').classList.remove('error');
     }
 
-    // Validar imagen
+ 
     if (imagen === '') {
         mensaje_error += 'La URL de la imagen del producto es obligatoria. \n';
         conteo_error++;
@@ -134,7 +129,7 @@ function validarFormulario(event) {
         document.querySelector('.agregar__producto__imagen').classList.remove('error');
     }
 
-    // Verificar errores
+  
     if (conteo_error === 0) {
         return true;
     } else {
@@ -147,17 +142,10 @@ function validarFormulario(event) {
 
 async function agregarProducto(event) {
     event.preventDefault();
-    const response = await fetch('http://localhost:8080/lastId', {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-    });
-    
-    const recogerId = await  response.json();
-    const id = recogerId.id;
     const nombre = document.querySelector('.agregar__producto__nombre').value.trim();
     const precio = document.querySelector('.agregar__producto__precio').value.trim();
     const imagen = document.querySelector('.agregar__producto__imagen').value.trim();
-    const producto = { id, nombre, precio, url: imagen };
+    const producto = { nombre, precio, url: imagen };
     console.log(producto);
     if (validarFormulario(event)) {
         crearProducto(producto);

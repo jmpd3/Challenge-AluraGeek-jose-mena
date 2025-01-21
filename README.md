@@ -18,6 +18,6 @@ Alurageek es una plataforma de comercio electrónico con un diseño retro, que p
 - CSS
 - JavaScript
 - Node JS 
-- JSON-Server
+- MockAPI
 
 
